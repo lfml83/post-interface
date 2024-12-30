@@ -11,8 +11,11 @@ export function Comment({content, onDeleteComment}){
     function handleDeleteComment(){
         onDeleteComment(content)
     }
+    /*  pegando o valor anterior usando useState e somando mais 1 */
     function handleLikeComment(){
-        setLikeCount(likeCount+1)
+        setLikeCount((state) => {
+            return state + 1
+        })
     }
     
     return(
