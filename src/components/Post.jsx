@@ -37,6 +37,16 @@ export function Post({author,publishedAt, content}){
    function handleNewCommentChange(){
     setNewCommentText(event.target.value)
    }
+
+   function deleteComment(commentToDelete){
+    /* Vou retirar da lista oq eu quero deletar  eu consigo comunicar
+     entre pai e filho ou filho e pai atraves das propriedades*/
+    const commentWithoutDeleteOne=comments.filter(comment =>{
+        return comment != commentToDelete
+    })
+    
+    setComments(commentWithoutDeleteOne)
+   }
    
 
 
@@ -85,7 +95,8 @@ export function Post({author,publishedAt, content}){
             {comments.map(comment =>{
                 return <Comment 
                 key={comment}
-                content={comment}/>
+                content={comment} 
+                onDeleteComment={deleteComment}/>
             })}
         </div>
 
