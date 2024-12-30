@@ -1,0 +1,18 @@
+.wrapper{
+max-height: 70rem;
+margin: 2rem auto;
+padding: 0 1rem;
+display: grid;
+grid-template-columns: 256px 1fr; /* Primeira coluna tem 256 e a segunda o qto couber na tela*/
+gap: 2rem;
+align-items: flex-start;
+}
+/* Quando a tela diminuir nesse tamanho a tela tera apenas 1 frame */
+@media(max-width: 768px){
+    html{
+        font-size: 87.5%;
+    }
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
